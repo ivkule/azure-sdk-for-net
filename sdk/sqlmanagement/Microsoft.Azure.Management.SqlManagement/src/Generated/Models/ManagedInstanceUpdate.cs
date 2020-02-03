@@ -94,8 +94,10 @@ namespace Microsoft.Azure.Management.Sql.Models
         /// Europe Standard Time".</param>
         /// <param name="instancePoolId">The Id of the instance pool this
         /// managed server belongs to.</param>
+        /// <param name="maintenancePolicyId">Specifies maintenance policy id
+        /// to apply to this managed instance.</param>
         /// <param name="tags">Resource tags.</param>
-        public ManagedInstanceUpdate(Sku sku = default(Sku), string managedInstanceCreateMode = default(string), string fullyQualifiedDomainName = default(string), string administratorLogin = default(string), string administratorLoginPassword = default(string), string subnetId = default(string), string state = default(string), string licenseType = default(string), int? vCores = default(int?), int? storageSizeInGB = default(int?), string collation = default(string), string dnsZone = default(string), string dnsZonePartner = default(string), bool? publicDataEndpointEnabled = default(bool?), string sourceManagedInstanceId = default(string), System.DateTime? restorePointInTime = default(System.DateTime?), string proxyOverride = default(string), string timezoneId = default(string), string instancePoolId = default(string), IDictionary<string, string> tags = default(IDictionary<string, string>))
+        public ManagedInstanceUpdate(Sku sku = default(Sku), string managedInstanceCreateMode = default(string), string fullyQualifiedDomainName = default(string), string administratorLogin = default(string), string administratorLoginPassword = default(string), string subnetId = default(string), string state = default(string), string licenseType = default(string), int? vCores = default(int?), int? storageSizeInGB = default(int?), string collation = default(string), string dnsZone = default(string), string dnsZonePartner = default(string), bool? publicDataEndpointEnabled = default(bool?), string sourceManagedInstanceId = default(string), System.DateTime? restorePointInTime = default(System.DateTime?), string proxyOverride = default(string), string timezoneId = default(string), string instancePoolId = default(string), string maintenancePolicyId = default(string), IDictionary<string, string> tags = default(IDictionary<string, string>))
         {
             Sku = sku;
             ManagedInstanceCreateMode = managedInstanceCreateMode;
@@ -116,6 +118,7 @@ namespace Microsoft.Azure.Management.Sql.Models
             ProxyOverride = proxyOverride;
             TimezoneId = timezoneId;
             InstancePoolId = instancePoolId;
+            MaintenancePolicyId = maintenancePolicyId;
             Tags = tags;
             CustomInit();
         }
@@ -269,6 +272,13 @@ namespace Microsoft.Azure.Management.Sql.Models
         /// </summary>
         [JsonProperty(PropertyName = "properties.instancePoolId")]
         public string InstancePoolId { get; set; }
+
+        /// <summary>
+        /// Gets or sets specifies maintenance policy id to apply to this
+        /// managed instance.
+        /// </summary>
+        [JsonProperty(PropertyName = "properties.maintenancePolicyId")]
+        public string MaintenancePolicyId { get; set; }
 
         /// <summary>
         /// Gets or sets resource tags.

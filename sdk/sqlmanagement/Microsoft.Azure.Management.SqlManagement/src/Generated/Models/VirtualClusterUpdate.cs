@@ -40,12 +40,15 @@ namespace Microsoft.Azure.Management.Sql.Models
         /// hardware, for the same SKU, then that can be captured here.</param>
         /// <param name="childResources">List of resources in this virtual
         /// cluster.</param>
+        /// <param name="maintenancePolicyId">Specifies maintenance policy id
+        /// to apply to this virtual cluster.</param>
         /// <param name="tags">Resource tags.</param>
-        public VirtualClusterUpdate(string subnetId = default(string), string family = default(string), IList<string> childResources = default(IList<string>), IDictionary<string, string> tags = default(IDictionary<string, string>))
+        public VirtualClusterUpdate(string subnetId = default(string), string family = default(string), IList<string> childResources = default(IList<string>), string maintenancePolicyId = default(string), IDictionary<string, string> tags = default(IDictionary<string, string>))
         {
             SubnetId = subnetId;
             Family = family;
             ChildResources = childResources;
+            MaintenancePolicyId = maintenancePolicyId;
             Tags = tags;
             CustomInit();
         }
@@ -73,6 +76,13 @@ namespace Microsoft.Azure.Management.Sql.Models
         /// </summary>
         [JsonProperty(PropertyName = "properties.childResources")]
         public IList<string> ChildResources { get; private set; }
+
+        /// <summary>
+        /// Gets or sets specifies maintenance policy id to apply to this
+        /// virtual cluster.
+        /// </summary>
+        [JsonProperty(PropertyName = "properties.maintenancePolicyId")]
+        public string MaintenancePolicyId { get; set; }
 
         /// <summary>
         /// Gets or sets resource tags.
